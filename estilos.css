@@ -1,0 +1,515 @@
+/* ====================== */
+/*        RESET           */
+/* ====================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+/* ====================== */
+/*         BODY           */
+/* ====================== */
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#020202,
+#000000,
+#020202
+);
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+color:#0f172a;
+
+position:relative;
+}
+
+/* ====================== */
+/*       FONDO EXTRA      */
+/* ====================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+background:#60a5fa30;
+
+border-radius:50%;
+
+top:-200px;
+right:-100px;
+
+filter:blur(120px);
+
+z-index:-1;
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:400px;
+height:400px;
+
+background:#818cf830;
+
+border-radius:50%;
+
+bottom:-200px;
+left:-100px;
+
+filter:blur(120px);
+
+z-index:-1;
+}
+
+/* ====================== */
+/*         HEADER         */
+/* ====================== */
+
+.banner{
+
+width:100%;
+
+min-height:210px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+background:rgb(202, 50, 50);
+
+box-shadow:
+0 8px 25px rgba(0,0,0,0.08);
+
+border-bottom-left-radius:40px;
+border-bottom-right-radius:40px;
+
+padding:25px;
+}
+
+/* ====================== */
+/*          LOGO          */
+/* ====================== */
+
+.logo-cobach{
+
+width:120px;
+
+position:absolute;
+
+left:40px;
+
+transition:0.4s ease;
+}
+
+.logo-cobach:hover{
+
+transform:
+scale(1.08)
+rotate(-4deg);
+}
+
+/* ====================== */
+/*         TITULO         */
+/* ====================== */
+
+.titulo-banner{
+
+text-align:center;
+
+animation:fade 1s ease;
+}
+
+.titulo-banner h1{
+
+font-size:42px;
+
+font-weight:700;
+
+color:#0f172a;
+
+margin-bottom:10px;
+}
+
+.titulo-banner p{
+
+font-size:18px;
+
+color:#489ee4;
+
+letter-spacing:2px;
+}
+
+/* ====================== */
+/*      CONTENEDOR        */
+/* ====================== */
+
+.contenedor{
+
+width:100%;
+
+padding:60px 20px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+justify-items:center;
+}
+
+/* ====================== */
+/*         LINKS          */
+/* ====================== */
+
+.link-caja{
+
+text-decoration:none;
+
+width:100%;
+
+display:flex;
+justify-content:center;
+}
+
+/* ====================== */
+/*         TARJETAS       */
+/* ====================== */
+
+.caja{
+
+width:320px;
+
+min-height:210px;
+
+background:rgb(160, 17, 17);
+
+border-radius:30px;
+
+padding:30px 25px;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+gap:18px;
+
+font-size:22px;
+
+font-weight:600;
+
+text-align:center;
+
+color:#0f172a;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.08);
+
+transition:0.4s ease;
+
+position:relative;
+
+overflow:hidden;
+
+animation:subida 0.8s ease;
+}
+
+/* ====================== */
+/*      EFECTO HOVER      */
+/* ====================== */
+
+.caja:hover{
+
+transform:
+translateY(-12px)
+scale(1.03);
+
+box-shadow:
+0 20px 40px rgba(59,130,246,0.20);
+}
+
+/* ====================== */
+/*      LINEA TOP         */
+/* ====================== */
+
+.caja::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:6px;
+
+background:
+linear-gradient(
+90deg,
+#3b82f6,
+#60a5fa,
+#818cf8
+);
+}
+
+/* ====================== */
+/*       IMAGENES         */
+/* ====================== */
+
+.caja img{
+
+width:85px;
+height:85px;
+
+object-fit:cover;
+
+border-radius:22px;
+
+transition:0.4s ease;
+
+box-shadow:
+0 8px 20px rgba(0,0,0,0.10);
+}
+
+.caja:hover img{
+
+transform:
+scale(1.12)
+rotate(-5deg);
+}
+
+/* ====================== */
+/*       ANIMACIONES      */
+/* ====================== */
+
+@keyframes subida{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes fade{
+
+0%{
+opacity:0;
+transform:translateY(-20px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ====================== */
+/*       BURBUJAS         */
+/* ====================== */
+
+.burbujas{
+
+position:fixed;
+
+width:100%;
+height:100%;
+
+top:0;
+left:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:-1;
+}
+
+.burbujas span{
+
+position:absolute;
+
+bottom:-100px;
+
+background:#93c5fd40;
+
+border-radius:50%;
+
+animation:burbujas 18s linear infinite;
+}
+
+.burbujas span:nth-child(1){
+
+left:10%;
+
+width:35px;
+height:35px;
+}
+
+.burbujas span:nth-child(2){
+
+left:35%;
+
+width:20px;
+height:20px;
+
+animation-duration:14s;
+}
+
+.burbujas span:nth-child(3){
+
+left:55%;
+
+width:45px;
+height:45px;
+}
+
+.burbujas span:nth-child(4){
+
+left:75%;
+
+width:25px;
+height:25px;
+
+animation-duration:12s;
+}
+
+.burbujas span:nth-child(5){
+
+left:90%;
+
+width:40px;
+height:40px;
+}
+
+@keyframes burbujas{
+
+0%{
+transform:translateY(0) scale(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-1200px) scale(1.4);
+opacity:0;
+}
+
+}
+
+/* ====================== */
+/*       SCROLLBAR        */
+/* ====================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#dbeafe;
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+180deg,
+#3b82f6,
+#818cf8
+);
+
+border-radius:20px;
+}
+
+/* ====================== */
+/*       RESPONSIVE       */
+/* ====================== */
+
+@media(max-width:900px){
+
+.banner{
+
+min-height:250px;
+
+flex-direction:column;
+}
+
+.logo-cobach{
+
+position:relative;
+
+left:0;
+
+margin-bottom:20px;
+
+width:100px;
+}
+
+.titulo-banner h1{
+
+font-size:28px;
+}
+
+.titulo-banner p{
+
+font-size:15px;
+}
+
+.contenedor{
+
+grid-template-columns:1fr;
+
+padding:40px 15px;
+}
+
+.caja{
+
+width:95%;
+
+min-height:180px;
+
+font-size:18px;
+}
+
+.caja img{
+
+width:70px;
+height:70px;
+}
+
+}
